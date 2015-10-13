@@ -50,8 +50,6 @@ func (service *VehicleService) All() string {
 	fmt.Println(access_token)
 	req.Header.Add("Authorization", "Bearer "+access_token)
 
-	//var tok Vehicle
-
 	resp, _ := service.client.client.Do(req)
 	defer resp.Body.Close()
 	respData, _ := ioutil.ReadAll(resp.Body)
