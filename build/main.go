@@ -1,6 +1,7 @@
 package main
 
 import (
+	"strconv"
 	"github.com/amaniak/tesla"
 )
 
@@ -23,7 +24,13 @@ func main() {
 	//Print vehicles
 	tesla.JQPrinter(service.Vehicle.All())
 
+	// Ask
+	idStr := tesla.Ask("Choose vehicle id: ")
+
+	// Cast to int
+	i, err := strconv.Atoi(idStr)
+
 	//Honk Honk
-	tesla.JQPrinter(service.Vehicle.HonkHonk(1))
+	tesla.JQPrinter(service.Vehicle.HonkHonk(i))
 
 }

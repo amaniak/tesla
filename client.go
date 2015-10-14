@@ -80,7 +80,7 @@ func (c *Client) Authorize(cred *Credentials) *Token {
 	}
 
 	// store for later
-	Ok("[OK] Tesla token recieved")
+	Ok("[OK] Tesla Portal token recieved")
 	c.token = tok
 	return tok
 }

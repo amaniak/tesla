@@ -29,7 +29,6 @@ func (service *VehicleService) HonkHonk(id int) string {
 	req, _ := service.client.NewRequest("POST", uri, data)
 
 	access_token := service.AccessToken()
-	fmt.Println(access_token)
 	req.Header.Add("Authorization", "Bearer "+access_token)
 
 	//var tok Vehicle
@@ -47,7 +46,6 @@ func (service *VehicleService) All() string {
 	req, _ := service.client.NewRequest("GET", "api/1/vehicles", data)
 
 	access_token := service.AccessToken()
-	fmt.Println(access_token)
 	req.Header.Add("Authorization", "Bearer "+access_token)
 
 	resp, _ := service.client.client.Do(req)
